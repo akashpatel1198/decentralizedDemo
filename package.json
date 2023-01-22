@@ -11,7 +11,7 @@
   "scripts": {
     "start": "nodemon server/server.js",
     "build": "webpack",
-    "webdev": "webpack serve"
+    "dev": "webpack serve"
   },
   "dependencies": {
     "@babel/core": "^7.15.8",
@@ -21,6 +21,7 @@
     "css-loader": "^6.7.3",
     "express": "^4.18.2",
     "html-webpack-plugin": "^5.5.0",
+    "lorem-ipsum": "^2.0.8",
     "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
