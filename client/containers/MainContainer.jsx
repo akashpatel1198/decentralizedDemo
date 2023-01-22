@@ -25,7 +25,7 @@ const MainContainer = () => {
       mainPage = <div>No Page Loaded</div>;
   }
   return(
-    <div>
+    <div className="z-10 mt-12">
       {mainPage}
     </div>
   );
