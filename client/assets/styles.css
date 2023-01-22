@@ -1,9 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
+  background-color: black;
+  color: blue;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
+body::-webkit-scrollbar { /* Chrome, Safari, and Opera */
+  display: none;
+}
+
+
 .objects {
-  background: linear-gradient(to right, #159957, #155799);
+  background: linear-gradient(to right, #165b04, #6e0c9c);
   width: 100%;
   height: 100vh;
 }
@@ -87,20 +100,25 @@ body {
 #root {
   width: 100%;
   position: absolute;
-  z-index: 1;
 }
 
-#navbar {
-  background-color: green;
-  display: flex;
-  flex-direction: row;
-  height: 40px;
-  justify-content: space-evenly;
-  align-items: center;
+@layer components {
+  .navbar-icon {
+    @apply relative flex items-center justify-center
+            h-10 w-10 mt-2 mb-2 drop-shadow-2xl
+            bg-gray-700 text-green-500
+            hover:bg-green-600 hover:text-white
+            rounded-3xl hover:rounded-xl
+            transition-all duration-500 ease-in-out
+            cursor-pointer;
+  }
+
+  .navbar-tooltip {
+    @apply absolute h-auto p-2 m-2 min-h-max top-9
+    rounded-md shadow-md
+    text-white bg-gray-700
+    text-xs font-bold
+    transition-all duration-100 ease-linear scale-0 origin-top;
+  }
 }
 
-.nav-btn {
-  background-color: red;
-  height: 25px;
-  width: 70px;
-}
