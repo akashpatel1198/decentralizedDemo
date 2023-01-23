@@ -10,8 +10,8 @@ const ParticlesComponent = () => {
 
   let currentConfig = {}
 
-  if (navState === 'Home') currentConfig = {};
-  else if (navState === 'Mission') currentConfig = partcilesConfig.snow;
+  // if (navState === 'Home') currentConfig = {};
+  if (navState === 'Mission' || navState === 'Home') currentConfig = partcilesConfig.snow;
   else if (navState === 'Mint') currentConfig = partcilesConfig.lines;
   else if (navState === 'Gallery') currentConfig = partcilesConfig.space;
 

@@ -10,13 +10,13 @@ partcilesConfig.lines = {
       }
     },
     color: {
-      value: "#ffffff"
+      value: "#165b04"
     },
     shape: {
       type: "circle",
       stroke: {
         width: 0,
-        color: "#000000"
+        color: "#165b04"
       },
       polygon: {
         nb_sides: 5
@@ -50,7 +50,7 @@ partcilesConfig.lines = {
     line_linked: {
       enable: true,
       distance: 150,
-      color: "#ffffff",
+      color: "#14de1e",
       opacity: 0.4,
       width: 1
     },
@@ -121,7 +121,7 @@ partcilesConfig.snow = {
       }
     },
     color: {
-      value: "#fff"
+      value: "#3884f5"
     },
     shape: {
       type: "circle",
@@ -235,13 +235,13 @@ partcilesConfig.space = {
       value: "#ffffff"
     },
     shape: {
-      type: "circle",
+      type: "polygon",
       stroke: {
         width: 0,
         color: "#000000"
       },
       polygon: {
-        nb_sides: 5
+        nb_sides: 6
       },
       image: {
         src: "img/github.svg",

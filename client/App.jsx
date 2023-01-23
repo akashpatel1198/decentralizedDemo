@@ -7,14 +7,14 @@ import ParticlesComponent from "./components/Particles.jsx";
 const App = () => {
 
   return(
-    <div className="flex flex-col items-center">
     <NavContextProvider>
+    <div className="flex flex-col items-center">
       <Navbar></Navbar>
       <MainContainer></MainContainer>
       <ParticlesComponent
       ></ParticlesComponent>
-    </NavContextProvider>
     </div>
+    </NavContextProvider>
   );
 }
 
