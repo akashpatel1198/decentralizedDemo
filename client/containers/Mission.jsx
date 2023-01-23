@@ -1,13 +1,20 @@
 import React from "react";
 import MissionBlock from "../components/MissionBlock.jsx";
+import blockchain from '../assets/blockchain_logo.png';
+import avngNewYork from '../assets/avengers_newyork.jpg';
+import avngArt from '../assets/avengers_art.jpg';
+import avngMovie from '../assets/avengers_movie.jpg';
+import hulkPunch from '../assets/hulk_punch.gif';
 
 const Mission = () => {
   return(
-    <div  className="">
+    <div  className="flex flex-col justify-evenly items-center w-3/5">
       Container for Mission
-      <MissionBlock></MissionBlock>
-      <MissionBlock></MissionBlock>
-      <MissionBlock></MissionBlock>
+      <MissionBlock imgSource={blockchain}></MissionBlock>
+      <MissionBlock imgSource={hulkPunch}></MissionBlock>
+      <MissionBlock imgSource={avngArt}></MissionBlock>
+      <MissionBlock imgSource={avngMovie}></MissionBlock>
+      
     </div>
   );
 }

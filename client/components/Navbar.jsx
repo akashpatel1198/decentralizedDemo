@@ -7,10 +7,17 @@ import { FaHome, FaShoppingCart, FaBuromobelexperte } from "react-icons/fa";
 
 
 
+
 const Navbar = () => {
+  const setNavState = useNavContext().setNavState;
+  const navState = useNavContext().navState;
+
   const NavBarIcon = ({ icon, page }) => {
+    let changeBG = '';
+    if (navState === page) changeBG = ' bg-white';
+
     return(
-    <div className="navbar-icon group" onClick={() => setNavState(page)}>
+    <div className={"navbar-icon group" + changeBG} onClick={() => setNavState(page)}>
       {icon}
       <span className="navbar-tooltip group-hover:scale-100">
         {page}
@@ -19,16 +26,12 @@ const Navbar = () => {
     )
   };
 
-  const setNavState = useNavContext().setNavState;
-  const buttonStyle = 'flex flex-col item-center justify-center h-11 w-11 mt-2 mb-2 mc-auto\
-                      bg-first hover:bg-third \
-                      rounded-md';
-  const iconStyle = 'h-10 w-10';
-  const textStyle = 'text-xs hover-underline-animation cursor-pointer';
+  
+
   return(
     <div className="w-screen h-12 m-0 z-20 fixed
                     flex flex-row justify-evenly items-center
-                    bg-second">
+                    bg-second bg-opacity-20">
       <img src={slime} style={{"maxHeight": "100%", "maxWidth": "100%"}} onClick={() => setNavState('Home')}></img>
       <NavBarIcon icon={<FaHome  size='30'></FaHome>} page={'Mission'}>
       </NavBarIcon>
