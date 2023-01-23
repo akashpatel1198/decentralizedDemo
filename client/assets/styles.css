@@ -42,10 +42,30 @@ body::-webkit-scrollbar { /* Chrome, Safari, and Opera */
 .boxes-full {
   background-color: rgba(241, 30, 216, 0.476);
   width: 100%;
+  height: 93vh;
+  overflow-y: auto;
 }
 
 #traits {
   height: 93vh;
+  display: flex;
+  flex-direction: column;
+  width: 260px;
 }
-/* 
-.boxes-container  */
+
+#boxes-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  padding: 5px;
+  justify-content: space-evenly;
+}
+
+.box {
+  height: 150px;
+  width: 150px;
+  border: solid;
+  border-color: red;
+  border-width: 3px;
+}
