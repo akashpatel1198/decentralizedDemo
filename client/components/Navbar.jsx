@@ -5,9 +5,6 @@ import { useNavContext } from "../contexts/NavContext.jsx";
 import { FaHome, FaShoppingCart, FaBuromobelexperte } from "react-icons/fa";
 
 
-
-
-
 const Navbar = () => {
   const setNavState = useNavContext().setNavState;
   const navState = useNavContext().navState;
@@ -29,10 +26,10 @@ const Navbar = () => {
   
 
   return(
-    <div className="w-screen h-12 m-0 z-20 fixed
+    <div className="w-screen h-14 m-0 z-20 fixed
                     flex flex-row justify-evenly items-center 
-                    bg-gradient-to-r from-green-400 to-green-900 
-                    border-b-4 border-gray-600">
+                    border-b-4 border-t-4 border-gray-600"
+          id="navbar">
       <img src={slime} style={{"maxHeight": "100%", "maxWidth": "100%"}} onClick={() => setNavState('Home')}></img>
       <NavBarIcon icon={<FaHome  size='30'></FaHome>} page={'Mission'}>
       </NavBarIcon>
@@ -42,7 +39,7 @@ const Navbar = () => {
       </NavBarIcon>
       
       <div className="h-12">
-        <img src={fox} style={{"maxHeight": "100%", "maxWidth": "100%"}}></img>
+        <img src={slime} style={{"maxHeight": "100%", "maxWidth": "100%"}}></img>
       </div>
     </div>
   );
