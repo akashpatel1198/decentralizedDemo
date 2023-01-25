@@ -7,7 +7,7 @@ export function useNavContext() {
 }
 
 export function NavContextProvider({ children }) {
-  const [navState, setNavState] = useState('Gallery')
+  const [navState, setNavState] = useState('Home')
   
 
   return (

@@ -25,7 +25,7 @@ const MainContainer = () => {
       mainPage = <div>No Page Loaded</div>;
   }
   return(
-    <div className="z-10 mt-12 flex flex-col items-center pointer-events-none">
+    <div className="z-10 mt-14 flex flex-col items-center pointer-events-none">
       {mainPage}
     </div>
   );
