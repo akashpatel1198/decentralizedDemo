@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useTraitsContext } from "../contexts/TraitsContext.jsx";
 
 const SidebarLink = styled.div`
   display: flex;
@@ -41,8 +42,22 @@ const DropdownLink = styled.div`
 
 const SubMenu = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
-
   const showSubnav = () => setSubnav(!subnav);
+
+  const traitsState = useTraitsContext().traitsState;
+  const setTraitsState = useTraitsContext().setTraitsState;
+
+  const handleChange = (traitStr, itemStr) => {
+    setTraitsState((state) => {
+      console.log('box checked');
+      console.log(`traitStr is ${traitStr} and itemStr is ${itemStr}`)
+      const newState = { ...state };
+      newState[itemStr] = state[itemStr] ? state[itemStr] : {};
+      newState[itemStr][traitStr] = !newState[itemStr][traitStr];
+      console.log('the new state is: ', newState);
+      return newState;
+    })
+  }
 
   return (
     <>
@@ -60,12 +75,14 @@ const SubMenu = ({ item }) => {
         </div>
       </SidebarLink>
       {subnav &&
-        item.subNav.map((item, index) => {
+        item.subNav.map((trait, index) => {
           return (
-            <DropdownLink to={item.path} key={index}>
+            <DropdownLink key={index}>
               {/* {item.icon} */}
-              <SidebarLabel>{item.title}</SidebarLabel>
-              <input style={{height: '35px'}} type="checkbox"></input>
+              <SidebarLabel>{trait.title}</SidebarLabel>
+              <input style={{height: '35px'}} type="checkbox" 
+              checked={Boolean(traitsState?.[item.title]?.[trait.title])} 
+              onChange={() => handleChange(trait.title, item.title)}></input>
             </DropdownLink>
           );
         })}

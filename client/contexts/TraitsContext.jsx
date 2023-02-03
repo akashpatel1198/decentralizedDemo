@@ -2,12 +2,29 @@ import React, { useContext, useState } from 'react';
 
 const TraitsContext = React.createContext();
 
-export function useNavContext() {
+export function useTraitsContext() {
   return useContext(TraitsContext)
 }
 
-export function NavContextProvider({ children }) {
-  const [traitsState, setTraitsState] = useState({})
+export function TraitsContextProvider({ children }) {
+  const [traitsState, setTraitsState] = useState(
+    {
+      "Outfit": {
+          "Spacesuit": true,
+          "Wizard": true,
+          "Cowboy": true
+      },
+      "Skin": {
+          "Dragon": true,
+          "Ogre": true,
+          "Elf": true
+      },
+      "Background": {
+          "Green": true,
+          "Red": true,
+          "Blue": true
+      }
+  })
   
 
   return (

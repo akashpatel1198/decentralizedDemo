@@ -1,11 +1,24 @@
 import React from "react";
 import ImageBox from "../components/ImageBox.jsx";
+const mockData = require("../assets/mockData.js")
+import { useTraitsContext } from "../contexts/TraitsContext.jsx"; 
 
 const BoxesContainer = () => {
-  const boxesArr = [];
+  const traitsState = useTraitsContext().traitsState;
+  console.log('In BoxesContainer')
+  console.log(traitsState)
+  let boxesArr = [];
 
-  for (let i = 0; i < 100; i++) {
-    boxesArr.push(<ImageBox></ImageBox>);
+  outer: for (let i = 0; i < mockData.length; i++) {
+    const boxTraits = Object.keys(mockData[i])
+    for (let filter of boxTraits) {
+      if (filter === 'id') continue;
+      // console.log(`filter is ${filter}`)
+      // console.log(mockData[i][filter])
+      const currentTrait = mockData[i][filter]
+      if (!traitsState[filter][currentTrait]) continue outer;
+    }
+    boxesArr.push(<ImageBox data={mockData[i]} key={i}></ImageBox>);
   };
 
   return(
