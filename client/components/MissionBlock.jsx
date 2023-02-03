@@ -16,9 +16,11 @@ const MissionBlock = (props) => {
 
   const placeholderText = lorem.generateParagraphs(5);
   return(
-    <div className="bg-black/80 text-center pt-5 pb-5 flex flex-col items-center">
-      <img src={props.imgSource} style={{"maxHeight": "400px"}}></img>
-      {placeholderText}
+    <div className="text-center pt-15 pb-5 flex flex-col items-center">
+      <img src={props.imgSource} style={{"maxHeight": "400px"}} className="mt-15"></img>
+      <div className="text-center mt-8 pl-10 pr-10">
+        {placeholderText}
+      </div>
     </div>
   );
 }

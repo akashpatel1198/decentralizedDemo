@@ -1,6 +1,7 @@
 import React from "react";
-import slime from '../assets/slime_ghost.png';
-import fox from '../assets/metamask_logo.png';
+// import slime from '../assets/slime_ghost.png';
+// import fox from '../assets/metamask_logo.png';
+import logo from '../assets/LOGO_Yizzy.png';
 import { useNavContext } from "../contexts/NavContext.jsx";
 import { FaHome, FaShoppingCart, FaBuromobelexperte } from "react-icons/fa";
 
@@ -11,7 +12,7 @@ const Navbar = () => {
 
   const NavBarIcon = ({ icon, page }) => {
     let changeBG = '';
-    if (navState === page) changeBG = ' bg-white';
+    if (navState === page) changeBG = ' border-2 border-white';
 
     return(
     <div className={"navbar-icon group" + changeBG} onClick={() => setNavState(page)}>
@@ -26,21 +27,18 @@ const Navbar = () => {
   
 
   return(
-    <div className="w-screen h-14 m-0 z-20 fixed
+    <div className="h-14 z-20 bg-white
                     flex flex-row justify-evenly items-center 
-                    border-b-4 border-t-4 border-gray-600"
+                    border border-black"
           id="navbar">
-      <img src={slime} style={{"maxHeight": "100%", "maxWidth": "100%"}} onClick={() => setNavState('Home')}></img>
+      <img src={logo} style={{"maxHeight": "100%", "maxWidth": "100%"}} onClick={() => setNavState('Home')}></img>
       <NavBarIcon icon={<FaHome  size='30'></FaHome>} page={'Mission'}>
       </NavBarIcon>
       <NavBarIcon icon={<FaShoppingCart size='27'></FaShoppingCart>} page={'Mint'}>
       </NavBarIcon>
       <NavBarIcon icon={<FaBuromobelexperte size='30'></FaBuromobelexperte>} page={'Gallery'}>
       </NavBarIcon>
-      
-      <div className="h-12">
-        <img src={slime} style={{"maxHeight": "100%", "maxWidth": "100%"}}></img>
-      </div>
+      <img src={logo} style={{"maxHeight": "100%", "maxWidth": "100%"}}></img>
     </div>
   );
 }

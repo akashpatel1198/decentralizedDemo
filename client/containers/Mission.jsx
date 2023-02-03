@@ -7,8 +7,9 @@ import hulkPunch from '../assets/hulk_punch.gif';
 
 const Mission = () => {
   return(
-    <div className="flex flex-col items-center pointer-events-auto">
-      <div  className="flex flex-col justify-evenly items-center w-3/5">
+    // pointer-events-auto h-screen overflow-y-auto
+    <div className="flex flex-col items-center">
+      <div  className="flex flex-col justify-evenly items-center w-3/5 border border-black">
       Container for Mission
       <MissionBlock imgSource={blockchain}></MissionBlock>
       <MissionBlock imgSource={hulkPunch}></MissionBlock>
