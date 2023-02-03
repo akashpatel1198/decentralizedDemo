@@ -8,11 +8,11 @@ const App = () => {
 
   return(
     <NavContextProvider>
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center h-screen">
       <Navbar></Navbar>
       <MainContainer></MainContainer>
-      <ParticlesComponent
-      ></ParticlesComponent>
+      {/* <ParticlesComponent
+      ></ParticlesComponent> */}
     </div>
     </NavContextProvider>
   );
