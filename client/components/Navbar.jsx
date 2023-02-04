@@ -28,8 +28,8 @@ const Navbar = () => {
 
   return(
     <div className="h-14 z-20 bg-white
-                    flex flex-row justify-evenly items-center 
-                    border border-black"
+                    flex flex-row justify-between items-center 
+                    "
           id="navbar">
       <img src={logo} style={{"maxHeight": "100%", "maxWidth": "100%"}} onClick={() => setNavState('Home')}></img>
       <NavBarIcon icon={<FaHome  size='30'></FaHome>} page={'Mission'}>

@@ -9,21 +9,21 @@ export function useTraitsContext() {
 export function TraitsContextProvider({ children }) {
   const [traitsState, setTraitsState] = useState(
     {
-      "Outfit": {
-          "Spacesuit": true,
-          "Wizard": true,
-          "Cowboy": true
+      "Background": {
+        "Green": false,
+        "Red": false,
+        "Blue": false
       },
       "Skin": {
-          "Dragon": true,
-          "Ogre": true,
-          "Elf": true
+        "Dragon": false,
+        "Ogre": false,
+        "Elf": false
       },
-      "Background": {
-          "Green": true,
-          "Red": true,
-          "Blue": true
-      }
+      "Outfit": {
+        "Spacesuit": false,
+        "Wizard": false,
+        "Cowboy": false
+    },
   })
   
 

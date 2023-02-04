@@ -49,8 +49,8 @@ const SubMenu = ({ item }) => {
 
   const handleChange = (traitStr, itemStr) => {
     setTraitsState((state) => {
-      console.log('box checked');
-      console.log(`traitStr is ${traitStr} and itemStr is ${itemStr}`)
+      // console.log('box checked');
+      // console.log(`traitStr is ${traitStr} and itemStr is ${itemStr}`)
       const newState = { ...state };
       newState[itemStr] = state[itemStr] ? state[itemStr] : {};
       newState[itemStr][traitStr] = !newState[itemStr][traitStr];
