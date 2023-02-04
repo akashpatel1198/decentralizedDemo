@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ColorSelect from "./ColorSelect.jsx";
 import styled from 'styled-components';
 import { SidebarData } from './SidebarData.jsx';
 import SubMenu from './SubMenu.jsx';

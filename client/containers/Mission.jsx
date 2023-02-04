@@ -9,7 +9,7 @@ const Mission = () => {
   return(
     // pointer-events-auto h-screen overflow-y-auto
     <div className="flex flex-col items-center">
-      <div  className="flex flex-col justify-evenly items-center w-3/5 border border-black">
+      <div  className="flex flex-col justify-evenly items-center w-3/5">
       Container for Mission
       <MissionBlock imgSource={blockchain}></MissionBlock>
       <MissionBlock imgSource={hulkPunch}></MissionBlock>
